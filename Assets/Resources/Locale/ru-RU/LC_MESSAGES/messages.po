@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-10-22 20:55+0300\n"
+"PO-Revision-Date: 2020-10-22 20:56+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: ../../../../Scripts\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: T._;T._n:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: NGetText/NGetTextDemo.cs:17
+#, csharp-format
+msgid "You have {0} life."
+msgid_plural "You have {0} lifes."
+msgstr[0] "У вас {0} жизнь."
+msgstr[1] "У вас {0} жизни."
+msgstr[2] "У вас {0} жизней."
+
+#~ msgid "Hello, world!"
+#~ msgstr "Здравствуй, мир!"
