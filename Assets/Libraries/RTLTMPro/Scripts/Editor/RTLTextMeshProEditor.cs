@@ -1,6 +1,14 @@
-﻿using TMPro.EditorUtilities;
+using TMPro.EditorUtilities;
 using UnityEditor;
 using UnityEngine;
+
+
+#if FALSE // !TMP_Version_2_1_1
+using TMP_UiEditorPanel = TMPro.EditorUtilities.TMP_UiEditorPanel;
+#else
+using TMP_UiEditorPanel = TMPro.EditorUtilities.TMP_EditorPanelUI;
+#endif
+
 
 namespace RTLTMPro
 {
@@ -30,8 +38,8 @@ namespace RTLTMPro
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-            tmpro = (RTLTextMeshPro) target;
-            
+            tmpro = (RTLTextMeshPro)target;
+
             EditorGUILayout.Space();
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(originalTextProp, new GUIContent("RTL Text Input Box"));
@@ -88,7 +96,7 @@ namespace RTLTMPro
 
         protected virtual void ListenForZeroWidthNoJoiner()
         {
-            var editor = (TextEditor) GUIUtility.GetStateObject(typeof(TextEditor), GUIUtility.keyboardControl);
+            var editor = (TextEditor)GUIUtility.GetStateObject(typeof(TextEditor), GUIUtility.keyboardControl);
 
             bool shortcutPressed = (Event.current.modifiers & EventModifiers.Control) != 0 &&
                                    (Event.current.modifiers & EventModifiers.Shift) != 0 &&
@@ -97,7 +105,7 @@ namespace RTLTMPro
 
             if (!shortcutPressed) return;
 
-            originalTextProp.stringValue = originalTextProp.stringValue.Insert(editor.cursorIndex, ((char) GeneralLetters.ZeroWidthNoJoiner).ToString());
+            originalTextProp.stringValue = originalTextProp.stringValue.Insert(editor.cursorIndex, ((char)GeneralLetters.ZeroWidthNoJoiner).ToString());
             editor.selectIndex++;
             editor.cursorIndex++;
             Event.current.Use();
